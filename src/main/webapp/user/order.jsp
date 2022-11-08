@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: trang
-  Date: 10/31/2022
-  Time: 8:58 AM
+  User: Admin
+  Date: 11/7/2022
+  Time: 3:15 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -29,8 +29,8 @@
                 <th>name</th>
                 <th>img</th>
                 <th>price</th>
-                <th>order</th>
-<%--                <th>cart</th>--%>
+                <th>amount</th>
+
             </tr>
             </thead>
             <tbody>
@@ -40,14 +40,23 @@
                     <td>${sp.name}</td>
                     <td><img src="${sp.img}" height="200" width="250"></td>
                     <td> ${sp.price}</td>
-                    <td><a type="button" class="btn btn-success" href="/orders?id=${sp.id}">Order</a></td>
+                    <td>
+                        <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-">
+                            <input aria-label="quantity" class="input-qty" max="Số tối đa" min="Số tối thiểu" name="" type="number" value="">
+                            <input class="plus is-form" type="button" value="+">
+                        </div>
+                    </td>
+                    <td>
+                        <a type="button" class="btn btn-success" href="/orders?id=${sp.id}">Order</a>
+
                     </td>
                 </tr>
             </c:forEach>
             </tbody>
 
         </table>
-
+        <p>Tong so tien phai thanh toan la : </p>
     </div>
 </form>
 </body>

@@ -31,7 +31,9 @@ public class LoginServlet extends HttpServlet {
                     RequestDispatcher dispatcher = req.getRequestDispatcher("/user/user.jsp");
                     dispatcher.forward(req,resp);
                 }else{
-                    resp.sendRedirect("/admin.jsp");
+                    req.setAttribute("sanphams", ProductService.products);
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("/admin/showProduct.jsp");
+                    dispatcher.forward(req,resp);
                 }
             }else{
                 resp.sendRedirect("/login.jsp");

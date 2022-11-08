@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: trang
-  Date: 10/31/2022
-  Time: 8:58 AM
+  User: Admin
+  Date: 11/7/2022
+  Time: 5:01 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -29,25 +29,33 @@
                 <th>name</th>
                 <th>img</th>
                 <th>price</th>
-                <th>order</th>
-<%--                <th>cart</th>--%>
+                <th>amount</th>
+
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${sanphams}" var="sp">
+            <c:forEach items="${cart}" var="sp">
                 <tr>
                     <td>${sp.id}</td>
                     <td>${sp.name}</td>
                     <td><img src="${sp.img}" height="200" width="250"></td>
                     <td> ${sp.price}</td>
-                    <td><a type="button" class="btn btn-success" href="/orders?id=${sp.id}">Order</a></td>
+                    <td>
+                        <div class="buttons_added">
+                            1
+                        </div>
+                    </td>
+                    <td>
+                        <a type="button" class="btn btn-success" href="/orders?id=${sp.id}&action=delete">Delete</a>
+
                     </td>
                 </tr>
             </c:forEach>
             </tbody>
 
         </table>
-
+<%--        <p> <a type="button" class="btn btn-success" href="/orders?id=${sp.id}">Thanh Toan</a> </p>--%>
+        <h1 style="color: teal">Tổng giá tiền phải thanh toán là : ${total}</h1>
     </div>
 </form>
 </body>

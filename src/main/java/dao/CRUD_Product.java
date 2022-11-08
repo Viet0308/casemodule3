@@ -48,7 +48,6 @@ public class CRUD_Product {
             PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL);
             preparedStatement.setInt(1,id);
             preparedStatement.execute();
-//
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -67,4 +66,18 @@ public class CRUD_Product {
         }
 
     }
+
+
+//    public static Product findproduct(int id) {
+//        String findbyIDSQL = "SELECT all from product where id=?";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(findbyIDSQL);
+//            preparedStatement.setInt(1,id);
+//            preparedStatement.execute();
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//
+//        return null;
+//    }
 }

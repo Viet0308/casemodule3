@@ -30,4 +30,13 @@ public class ProductService {
             }
         }
     }
+
+//    public static void findbyID(int id) {
+//        for (int i = 0; i < products.size(); i++) {
+//            if (products.get(i).getId() == id) {
+//                products.get(i);
+//                CRUD_Product.findproduct(id);
+//            }
+//        }
+//    }
 }
